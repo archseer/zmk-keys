@@ -89,27 +89,45 @@
             bindings = <
 &trans      &trans    &kp LBRC  &kp RBRC  &kp EQUAL  &trans      &trans     &kp PLUS   &kp LBKT   &kp RBKT  &trans    &trans
 &trans      &kp EXCL  &kp AT    &kp HASH  &kp PRCNT  &kp DLLR    &kp CARET  &kp AMPS   &kp STAR   &kp BSLH  &kp PIPE  &trans
-&caps_word  &trans    &kp LPAR  &kp RPAR  &kp UNDER  &kp SQT     &kp DQT    &kp MINUS  &kp LT     &kp GT    &trans    &trans
+&caps_word  &trans    &trans    &trans    &kp UNDER  &kp SQT     &kp DQT    &kp MINUS  &kp LT     &kp GT    &trans    &trans
                                 &trans    &trans     &trans      &kp LPAR   &kp RPAR   &kp UNDER
             >;
         };
 
         num_layer {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
-&kp F7      &kp F8        &kp F9        &kp F10       &kp F11       &kp F12         &kp N0  &kp N7  &kp N8  &kp N9  &trans  &trans
-                                        &trans        &trans        &trans          &trans  &trans  &trans
+&trans  &trans  &trans  &trans   &trans   &trans     &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
+&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &kp N0  &kp N7  &kp N8  &kp N9  &trans  &trans
+                        &trans   &trans   &trans     &trans  &trans  &trans
             >;
         };
 
         nav_layer {
             bindings = <
-&trans  &trans  &trans  &trans        &trans        &trans        &trans      &trans       &trans    &trans  &trans     &trans
-&trans  &trans  &trans  &trans        &trans        &trans        &trans      &kp LEFT     &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans  &trans  &trans  &trans        &trans        &trans        &trans      &trans       &trans    &trans  &trans     &trans
-                        &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE    &sys_reset  &bootloader  &trans
+&trans  &trans  &trans  &trans        &trans        &trans        &trans  &trans    &trans    &trans  &trans     &trans
+&trans  &trans  &trans  &trans        &trans        &trans        &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans        &trans        &trans        &trans  &trans    &trans    &trans  &trans     &trans
+                        &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE    &trans  &trans    &trans
             >;
+        };
+
+        sys_layer {
+            bindings = <
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans       &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &bootloader     &bootloader  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &sys_reset      &sys_reset   &trans  &trans  &trans  &trans  &trans
+                                        &trans        &trans        &trans          &trans       &trans  &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        SYS {
+            if-layers = <1 2>;
+            then-layer = <4>;
         };
     };
 };
