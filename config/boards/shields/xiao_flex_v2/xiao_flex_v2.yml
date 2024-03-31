@@ -6,3 +6,7 @@ url: https://github.com/WainingForests/zmk-config-xiao-flex-v2/
 requires: [seeed_xiao]
 features:
   - keys
+siblings:
+  - xiao_flex_v2_left
+  - xiao_flex_v2_right
+  - xiao_flex_v2_dongle

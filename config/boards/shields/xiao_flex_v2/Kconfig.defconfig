@@ -1,4 +1,4 @@
-if SHIELD_XIAO_FLEX_V2_LEFT
+if SHIELD_XIAO_FLEX_V2_DONGLE
 
 config ZMK_KEYBOARD_NAME
     default "xiao_flex_v2"
@@ -6,11 +6,17 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config ZMK_USB
+    default y
+
 endif
 
 if SHIELD_XIAO_FLEX_V2
 
 config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
     default y
 
 endif

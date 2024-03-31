@@ -8,3 +8,7 @@ config SHIELD_XIAO_FLEX_V2_LEFT
 config SHIELD_XIAO_FLEX_V2_RIGHT
     def_bool $(shields_list_contains,xiao_flex_v2_right)
     select SHIELD_XIAO_FLEX_V2
+
+config SHIELD_XIAO_FLEX_V2_DONGLE
+    def_bool $(shields_list_contains,xiao_flex_v2_dongle)
+    select SHIELD_XIAO_FLEX_V2
