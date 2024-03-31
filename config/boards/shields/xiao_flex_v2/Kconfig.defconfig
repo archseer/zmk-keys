@@ -1,7 +1,7 @@
 if SHIELD_XIAO_FLEX_V2_DONGLE
 
 config ZMK_KEYBOARD_NAME
-    default "xiao_flex_v2"
+    default "dactyl"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
