@@ -2,6 +2,7 @@
 
 #include "xiao_flex_v2.dtsi"
 
+// Required since the dtsi didn't declare any, but ignored here later
 &kscan0 {
     col-gpios
         = <&gpio1 0 GPIO_ACTIVE_HIGH> 
@@ -12,3 +13,17 @@
         , <&xiao_d 10 GPIO_ACTIVE_HIGH> 
         ;
 };
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
