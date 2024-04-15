@@ -21,3 +21,7 @@ include:
     shield: xiao_flex_v2_dongle
   - board: seeeduino_xiao_ble
     shield: settings_reset
+  - board: seeeduino_xiao_ble
+    shield: totem_left
+  - board: seeeduino_xiao_ble
+    shield: totem_right
