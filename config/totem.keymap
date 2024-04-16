@@ -27,6 +27,11 @@
     tapping-term-ms = <170>;
 };
 
+&lt {
+    flavor = "balanced";
+    quick-tap-ms = <175>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -99,10 +104,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                  &kp Q        &kp W        &kp D         &kp F         &kp G            &kp J      &kp U         &kp R         &kp L        &kp SEMI
-                  &hml LGUI A  &hml LALT S  &hml LCTRL E  &hml LSHFT T  &kp G            &kp Y      &hmr RSHFT N  &hmr RCTRL I  &hmr RALT O  &hmr RGUI H
-&mt LCTRL ESCAPE  &kp Z        &kp X        &kp C         &kp V         &kp B            &kp P      &kp M         &kp COMMA     &kp DOT      &kp FSLH     &kp EQUAL
-                                            &trans        &lt 1 SPACE   &kp BACKSPACE    &lt 2 TAB  &lt 3 ENTER   &trans
+                  &kp Q        &kp W        &kp D           &kp F         &kp G            &kp J      &kp U         &kp R         &kp L        &kp SEMI
+                  &hml LGUI A  &hml LALT S  &hml LCTRL E    &hml LSHFT T  &kp G            &kp Y      &hmr RSHFT N  &hmr RCTRL I  &hmr RALT O  &hmr RGUI H
+&mt LCTRL ESCAPE  &kp Z        &kp X        &kp C           &kp V         &kp B            &kp P      &kp M         &kp COMMA     &kp DOT      &kp FSLH     &kp EQUAL
+                                            &mt GRAVE LGUI  &lt 1 SPACE   &kp BACKSPACE    &lt 3 TAB  &lt 2 ENTER   &kp LALT
             >;
         };
 
@@ -123,41 +128,39 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &trans    &kp LBRC  &kp RBRC  &kp EQUAL    &trans        &trans     &kp PLUS   &kp LBKT  &kp RBKT  &trans
-        &kp EXCL  &kp AT    &kp HASH  &kp PERCENT  &kp DOLLAR    &kp CARET  &kp AMPS   &kp STAR  &kp BSLH  &kp PIPE
-&trans  &trans    &trans    &trans    &kp UNDER    &kp SQT       &kp DQT    &kp MINUS  &kp LT    &kp GT    &trans    &kp EQUAL
-                            &trans    &trans       &trans        &kp UNDER  &kp LPAR   &kp RPAR
+             &trans    &kp LBRC  &kp RBRC  &kp EQUAL    &trans        &trans     &kp PLUS   &kp LBKT  &kp RBKT  &trans
+             &kp EXCL  &kp AT    &kp HASH  &kp PERCENT  &kp DOLLAR    &kp CARET  &kp AMPS   &kp STAR  &kp BSLH  &kp PIPE
+&smart_shft  &trans    &trans    &trans    &kp UNDER    &kp SQT       &kp DQT    &kp MINUS  &kp LT    &kp GT    &trans    &kp EQUAL
+                                 &trans    &trans       &trans        &kp UNDER  &kp LPAR   &kp RPAR
             >;
+        };
+
+        num_layer {
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp N0  &kp N7  &kp N8  &kp N9  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "NUM";
         };
 
         nav_layer {
-            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-
-            label = "NAVI";
-
-            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃           ┃           ┃     UP    ┃           ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃     +     ┃
-            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃   SHIFT   ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     -     ┃
-            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃           ┃           ┃   P UP    ┃  C LOCK   ┃  P DOWN   ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃           ┃
-            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃           ┃    TAB    ┃    SPC    ┃   ┃    DEL    ┃     0     ┃           ┃
-            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-
             bindings = <
-        &kp ESC    &bt BT_CLR  &kp UP    &kp EQUAL  &kp LBRC    &kp RBRC  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
-        &kp LSHFT  &kp LEFT    &kp DOWN  &kp RIGHT  &kp LBKT    &kp RBKT  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS
-&trans  &kp DEL    &kp PG_UP   &kp CAPS  &kp PG_DN  &kp LPAR    &kp RPAR  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
-                               &trans    &trans     &trans      &mo 3     &kp KP_N0  &trans
+        &trans  &trans  &trans        &trans        &trans        &trans  &trans    &trans    &trans  &trans
+        &trans  &trans  &trans        &trans        &trans        &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
+&trans  &trans  &trans  &trans        &trans        &trans        &trans  &trans    &trans    &trans  &trans     &trans
+                        &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE    &trans  &trans    &trans
             >;
+
+            label = "NAV";
         };
 
-        adjust_layer {
+        sys_layer {
             // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 
-            label = "ADJ";
+            label = "SYS";
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
@@ -171,11 +174,20 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &sys_reset   &bt BT_CLR  &out OUT_TOG  &trans  &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F12
+        &sys_reset   &bt BT_CLR  &out OUT_TOG  &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F12
         &bootloader  &bt BT_NXT  &trans        &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11
-&trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
+&trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans
                                  &trans        &trans  &trans    &trans  &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        SYS {
+            if-layers = <1 2>;
+            then-layer = <4>;
         };
     };
 };
