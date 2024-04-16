@@ -76,7 +76,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base_layer {
             bindings = <
 &kp SQT         &kp Q  &kp W  &kp D          &kp F     &kp K             &kp J     &kp U      &kp R        &kp L    &kp SEMI  &kp MINUS
 &mt LCTRL ESC   &kp A  &kp S  &kp E          &kp T     &kp G             &kp Y     &kp N      &kp I        &kp O    &kp H     &kp EQUAL
@@ -100,10 +100,10 @@
 
         num_layer {
             bindings = <
-&trans  &trans  &trans  &trans   &trans   &trans     &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
-&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &kp N0  &kp N7  &kp N8  &kp N9  &trans  &trans
-                        &trans   &trans   &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp N0  &kp N7  &kp N8  &kp N9  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
 
             label = "NUM";
@@ -122,9 +122,9 @@
 
         sys_layer {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans       &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &bootloader     &bootloader  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &sys_reset      &sys_reset   &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans       &kp F1  &kp F2  &kp F3  &kp F10  &trans
+&trans      &trans        &trans        &trans        &trans        &bootloader     &bootloader  &kp F4  &kp F5  &kp F6  &kp F11  &trans
+&trans      &trans        &trans        &trans        &trans        &sys_reset      &sys_reset   &kp F7  &kp F8  &kp F9  &kp F12  &trans
                                         &trans        &trans        &trans          &trans       &trans  &trans
             >;
 
