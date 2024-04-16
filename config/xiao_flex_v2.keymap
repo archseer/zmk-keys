@@ -83,6 +83,8 @@
 &mt LSHFT LPAR  &kp Z  &kp X  &kp C          &kp V     &kp B             &kp P     &kp M      &kp COMMA    &kp DOT  &kp FSLH  &mt RSHIFT RPAR
                               &lt SYM SPACE  &kp BSPC  &mt LGUI GRAVE    &kp LALT  &lt 3 TAB  &lt 2 ENTER
             >;
+
+            label = "BASE";
         };
 
         sym_layer {
@@ -92,6 +94,8 @@
 &smart_shft  &trans    &trans    &trans    &kp UNDER  &kp SQT     &kp DQT    &kp MINUS  &kp LT     &kp GT    &trans    &trans
                                  &trans    &trans     &trans      &kp LPAR   &kp RPAR   &kp UNDER
             >;
+
+            label = "SYM";
         };
 
         num_layer {
@@ -101,6 +105,8 @@
 &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &kp N0  &kp N7  &kp N8  &kp N9  &trans  &trans
                         &trans   &trans   &trans     &trans  &trans  &trans
             >;
+
+            label = "NUM";
         };
 
         nav_layer {
@@ -110,6 +116,8 @@
 &trans  &trans  &trans  &trans        &trans        &trans        &trans  &trans    &trans    &trans  &trans     &trans
                         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE    &trans  &trans    &trans
             >;
+
+            label = "NAV";
         };
 
         sys_layer {
@@ -119,6 +127,8 @@
 &trans      &trans        &trans        &trans        &trans        &sys_reset      &sys_reset   &trans  &trans  &trans  &trans  &trans
                                         &trans        &trans        &trans          &trans       &trans  &trans
             >;
+
+            label = "SYS";
         };
     };
 
