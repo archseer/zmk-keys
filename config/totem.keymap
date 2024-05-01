@@ -96,7 +96,7 @@
                   &kp Q        &kp W        &kp D           &kp F         &kp K            &kp J      &kp U         &kp R         &kp L        &kp SEMI
                   &hml LGUI A  &hml LALT S  &hml LCTRL E    &hml LSHFT T  &kp G            &kp Y      &hmr RSHFT N  &hmr RCTRL I  &hmr RALT O  &hmr RGUI H
 &mt LCTRL ESCAPE  &kp Z        &kp X        &kp C           &kp V         &kp B            &kp P      &kp M         &kp COMMA     &kp DOT      &kp FSLH     &kp EQUAL
-                                            &mt GRAVE LGUI  &lt 1 SPACE   &kp BACKSPACE    &lt 3 TAB  &lt 2 ENTER   &kp LALT
+                                            &mt LGUI GRAVE  &lt 1 SPACE   &kp BACKSPACE    &lt 3 TAB  &lt 2 ENTER   &kp LALT
             >;
         };
 
