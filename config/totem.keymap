@@ -96,7 +96,7 @@
                   &kp Q        &kp W        &kp D           &kp F         &kp K            &kp J      &kp U         &kp R         &kp L        &kp SEMI
                   &hml LGUI A  &hml LALT S  &hml LCTRL E    &hml LSHFT T  &kp G            &kp Y      &hmr RSHFT N  &hmr RCTRL I  &hmr RALT O  &hmr RGUI H
 &mt LCTRL ESCAPE  &kp Z        &kp X        &kp C           &kp V         &kp B            &kp P      &kp M         &kp COMMA     &kp DOT      &kp FSLH     &kp EQUAL
-                                            &mt LGUI GRAVE  &lt 1 SPACE   &kp BACKSPACE    &lt 3 TAB  &lt 2 ENTER   &kp LALT
+                                            &mt LGUI GRAVE  &lt 1 SPACE   &kp BACKSPACE    &lt 3 TAB  &lt 2 ENTER   &smart_shft
             >;
         };
 
@@ -134,10 +134,32 @@
             label = "SYS";
             bindings = <
         &sys_reset   &bt BT_CLR  &out OUT_TOG  &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F12
-        &bootloader  &bt BT_NXT  &trans        &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11
+        &bootloader  &bt BT_NXT  &trans        &trans  &tog 5    &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans
                                  &trans        &trans  &trans    &trans  &trans  &trans
             >;
+        };
+
+        game_layer {
+            bindings = <
+         &kp TAB    &kp Q  &kp W   &kp E   &kp R    &kp T   &kp Y   &kp U   &kp I   &kp O
+         &kp LSHFT  &kp A  &kp S   &kp D   &kp F    &kp G   &kp H   &kp J   &kp K   &kp L
+&kp ESC  &kp LCTRL  &kp Z  &kp X   &kp C   &kp V    &kp B   &kp N   &kp M   &trans  &trans  &kp P
+                           &trans  &trans  &mo 6    &trans  &trans  &trans
+            >;
+
+            label = "GAME";
+        };
+
+        game2_layer {
+            bindings = <
+        &trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &kp N4  &kp N5  &kp N6  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "GAME+";
         };
     };
 
